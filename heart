@@ -1,0 +1,34 @@
+IN:    import pandas as pd
+
+IN:    data=pd.read_csv(“Heart.csv”)
+         data      
+
+IN:    data.shape
+
+IN:     data.isnull()
+
+IN:     data.isnull(),sum()
+
+IN:      data.dtypes
+
+IN:      data==0
+
+IN:      data[data==0].count()
+
+IN:      data[“Age”].mean()
+
+IN:      ndata=data[[“Age”, “Sex”, “ChestPain”, “RestBP”, “Chol”]]
+
+IN:      from sklearn.model_selection import train_test_split
+
+IN:      train, test = train_test_split(data, random_state=0, test_size=0.25)
+
+IN:       import numpy as np
+
+IN:       actual=list(np.ones(45)) + list(np.zeros(55))
+
+IN:       predicted=list(np.ones(40)) + list(list(np.zeros(52)) + list(np.ones(8))
+
+IN:        from sklearn.metrics import ConfusionMatrixDisplay
+
+IN:        ConfusionMatrixDisplay.from_predictions(actual,pridicted)
