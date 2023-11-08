@@ -5,7 +5,7 @@ IN:    import warnings
          import matplotlib.pyplot as  plt
          import seaborn as sns
 
-IN:   df=pd.read_csv(‘Mall_Customers.csv)
+IN:   df=pd.read_csv(‘Mall_Customers.csv')
         df.head()    
 
 IN:   df.info()
