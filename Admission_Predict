@@ -1,0 +1,65 @@
+IN:    import pandas as pd
+         import numpy as nd
+         import matplotlib.pyplot as  plt
+         import seaborn as sns
+
+IN:   df=pd.read_csv(‘Admission Predict’)
+           
+IN:    print(df.head(5))    
+
+IN:    df.columns  
+ 
+IN:    df.columns = df.columns.str.rstring()
+
+IN:    df.loc[df[‘Chance of Admit’] >=0.80, ‘Chance of Admit’] = 1
+
+IN:     df.loc[df[‘Chance of Admit’] <0.80, ‘Chance of Admit’] = 0
+
+IN:     df[‘Chance of Admit’].head(5)
+
+IN:     df.columns
+
+IN:     df = df.drop(‘Serial No.’ , axis =1)
+
+IN:     df.tail(5)
+
+IN:     x = df.iloc[:,0:7]
+
+IN:      y = df.iloc[:,7]
+
+IN:      y.head(5)
+
+IN:      from sklearn.model_selection import train_test_split
+
+IN:      x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.25, random_state=0)
+
+IN:      from sklearn.tree import DecisiontreeClassifier
+
+IN:      model = DecisiontreeClassifier(criterion = ‘entropy’, max_depth=4)
+
+IN:      model.fit(x_train,y_train)
+
+IN:      y.pred = model.predict(x_test)
+
+IN:      y_pred
+
+IN:      from sklearn.metrics import confusion_matrix
+
+IN:      matrix = confusion_matrix(y_test,y_pred,labels=[0.0,1.0]
+
+IN:       x_train.shape
+            x_test.shape
+
+IN:      matrix
+
+IN:      from sklearn.matrics import accuracy_score
+
+IN:      acc=accuracy_score(y_test,y_pred)
+
+IN:       print(acc)
+
+IN:       from sklearn.metrics import classification_report
+
+IN:       cr =  classification_report(y_test,y_pred)
+
+IN:        print(cr)
